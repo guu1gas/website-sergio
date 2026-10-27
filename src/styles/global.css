@@ -1,0 +1,113 @@
+/* src/styles/global.css */
+
+/* MK27-Inspired Minimalist CSS */
+:root {
+  --bg-color: #fcfcfc;
+  --text-color: #1a1a1a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Development Banner */
+.dev-banner {
+  background-color: #e6ff00;
+  color: #000;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  text-transform: uppercase;
+}
+
+/* Header */
+header {
+  padding: 60px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  margin-left: 30px;
+  font-size: 0.9rem;
+}
+
+/* Project Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 40px;
+  padding: 0 40px 100px 40px;
+}
+
+.project-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  opacity: 0.7;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #eaeaea;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px 60px 20px;
+  }
+  header {
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  nav a {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}

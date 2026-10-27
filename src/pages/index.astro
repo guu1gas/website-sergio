@@ -1,16 +1,80 @@
 ---
+// src/pages/index.astro
+import '../styles/global.css';
+
+// Currently using the Dev URL. Switch to "https://assets.antoniosergiokoch.com" when DNS finishes propagating.
+const r2BaseUrl = "https://pub-59adf280f6b84668975afcd327f64e09.r2.dev";
+
+const projects = [
+  { title: "Dr. Paulino - Casa no Muro", folder: "101_01-Dr. Paulino- Casa no Muro", coverImage: "08.jpg" },
+  { title: "Edifício de Habitação Imokleus I", folder: "103_02-Edificio de Habitação Imokleus I", coverImage: "1.JPG" },
+  { title: "Casa da Lages", folder: "118_05-Casa da Lages", coverImage: "IMG_1796_2.jpg" },
+  { title: "Casas da Devesa", folder: "119_06-Casas da Devesa", coverImage: "AT_20180504_002.jpg" },
+  { title: "Moreira da Silva", folder: "121_06-Moreira da Silva", coverImage: "001.jpg" },
+  { title: "Miguel Santo I", folder: "123A_06 -Miguel Santo I", coverImage: "maquete/maq 046_1.jpg" },
+  { title: "Miguel Santos", folder: "123B_06-Miguel Santos", coverImage: "01_A.jpg" },
+  { title: "Limpo de Faria", folder: "125_06-Limpo de Faria", coverImage: "05.jpg" },
+  { title: "Casa em Cotas", folder: "127_07-Casa em Cotas", coverImage: "DSC_2977.JPG" },
+  { title: "Quinta de Cottas", folder: "133_08-Quinta de Cottas", coverImage: "01.jpg" },
+  { title: "Mário Brito", folder: "134_09-Mario Brito-2", coverImage: "3D/001_vista3DPatio.jpg" },
+  { title: "Quinta do Lago I (A)", folder: "138_14A Quinta do Lago I", coverImage: "Maquete/1.jpg" },
+  { title: "Quinta do Lago I (B)", folder: "138_14B-Quinta do Lago I", coverImage: "01.jpg" },
+  { title: "Quinta do Lago II", folder: "140_14-Quinta do Lago II", coverImage: "IMG_2436_1.jpg" },
+  { title: "Expo ESM CCB", folder: "141A_15-Expo ESM CCB", coverImage: "DSC_0679 copy.jpg" },
+  { title: "Expo ESM Tomar", folder: "141B_16 Expo ESM Tomar", coverImage: "EXPO_TOMAR_SERGIO_KOCH_003.jpg" },
+  { title: "BA Vidro", folder: "142_15-BA Vidro", coverImage: "BA_SERGIO_KOCH_001.jpg" },
+  { title: "Quinta do Lago III", folder: "143_15-Quinta do Lago III", coverImage: "1776507154026.jpg" },
+  { title: "Adega Cottas", folder: "150_14-Adega Cottas", coverImage: "vista01_VERSÃO 3.jpg" },
+  { title: "Quinta do Lago VI (A)", folder: "153A_17-Quinta do Lago VI", coverImage: "im01_frente.jpg" },
+  { title: "Quinta do Lago VI (B)", folder: "153B_17-Quinta do Lago VI", coverImage: "01.JPG" },
+  { title: "Quinta do Lago VI (C)", folder: "153C_7-Quinta do Lago VI", coverImage: "VISTA001.jpg" },
+  { title: "Quinta do Lago IV", folder: "153_17-Quinta do Lago IV", coverImage: "20230615_121505.jpg" },
+  { title: "Cabanas Garden", folder: "164_19-Cabanas Garden", coverImage: "exteriores finais/L_03.jpg" },
+  { title: "Apartamento CMS", folder: "166_19_Apartamento CMS", coverImage: "AT_20230928_001.jpg" },
+  { title: "Remodelação CGD", folder: "170_21-Remodeaeção CGD", coverImage: "AT_20240815_001.jpg" },
+  { title: "Bessa SK", folder: "172_20-Bessa SK_ESM", coverImage: "MMF_LFA_20200703_088.jpg" },
+  { title: "Passeio Alegre", folder: "172_21-passeio Alegre", coverImage: "VS_MPA136_EXT_R04_C01.jpg" },
+  { title: "Edifício RITSU", folder: "185_24-Edificio RITSU", coverImage: "01-Alçado Principal.jpg" },
+  { title: "Vila Moura", folder: "196_25-Vila Moura", coverImage: "1.jpg" },
+  { title: "Arcaya House", folder: "205-26-Arcaya", coverImage: "3D ARCAYA HOUSE- IMAGES/ALÇADO PRINCIPAL.jpg" },
+  { title: "MNNA Desenhos", folder: "mnna-desenhos", coverImage: "DSC04827.JPG" },
+  { title: "Salamanca", folder: "salamanca", coverImage: "1776709008141.jpg" }
+];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>António Sérgio Koch | Architecture</title>
+  </head>
+  <body>
+    <div class="dev-banner">
+      Website Under Development
+    </div>
+
+    <header>
+      <h1>António Sérgio Koch</h1>
+      <nav>
+        <a href="/">Projects</a>
+        <a href="/about">Office</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      {projects.map((project) => (
+        <a href={`/projects/${project.folder}`} class="project-card">
+          <div class="image-container">
+            <img 
+              src={encodeURI(`${r2BaseUrl}/${project.folder}/${project.coverImage}`)} 
+              alt={project.title} 
+              loading="lazy"
+            />
+          </div>
+          <h2 class="project-title">{project.title}</h2>
+        </a>
+      ))}
+    </main>
+  </body>
 </html>
