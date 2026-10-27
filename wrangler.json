@@ -1,4 +1,7 @@
 {
   "name": "website-sergio",
-  "compatibility_date": "2026-10-27"
+  "compatibility_date": "2026-10-27",
+  "assets": {
+    "directory": "./dist"
+  }
 }
