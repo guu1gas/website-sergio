@@ -1,0 +1,85 @@
+---
+// src/pages/index.astro
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>António Sérgio Koch | Architecture</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: #111;
+      }
+
+      .cover-container {
+        height: 100vh;
+        width: 100%;
+        /* This looks for cover-image.jpeg inside your public folder */
+        background-image: 
+          linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), 
+          url('/cover-image.jpeg');
+        background-size: cover;
+        background-position: center;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        opacity: 0.7;
+      }
+
+      .contacts {
+        font-size: 0.95rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        line-height: 2;
+        opacity: 0.9;
+      }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom 0.3s ease;
+      }
+
+      a:hover {
+        border-bottom: 1px solid #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover-container">
+      <h1>António Sérgio Koch</h1>
+      <div class="subtitle">Website Under Development</div>
+      
+      <div class="contacts">
+        <div><a href="mailto:sergiokoch@gmail.com">sergiokoch@gmail.com</a></div>
+        <div>+351 919 378 466</div>
+        <div style="margin-top: 15px; font-size: 0.85rem; opacity: 0.7;">Porto, Portugal</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -111,3 +111,14 @@ nav a {
     margin-right: 20px;
   }
 }
+
+.cover-container {
+  height: 100vh;
+  width: 100%;
+  /* Now loading directly from your public folder */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), 
+    url('/cover-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
