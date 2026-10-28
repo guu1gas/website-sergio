@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import './projects.css';
+
+const projectsList = [
+  {
+    title: "E-Commerce Rebrand",
+    category: "Branding / Web",
+    imageUrl: "https://picsum.photos/800/600?random=1",
+    link: "#"
+  },
+  {
+    title: "Mobile App Redesign",
+    category: "UI/UX Design",
+    imageUrl: "https://picsum.photos/800/600?random=2",
+    link: "#"
+  },
+  {
+    title: "Architectural Gallery",
+    category: "Photography",
+    imageUrl: "https://picsum.photos/800/600?random=3",
+    link: "#"
+  },
+  {
+    title: "Editorial Layout",
+    category: "Print",
+    imageUrl: "https://picsum.photos/800/600?random=4",
+    link: "#"
+  },
+  {
+    title: "Analytics Dashboard",
+    category: "Development",
+    imageUrl: "https://picsum.photos/800/600?random=5",
+    link: "#"
+  },
+  {
+    title: "3D Motion Graphics",
+    category: "Animation",
+    imageUrl: "https://picsum.photos/800/600?random=6",
+    link: "#"
+  }
+];
+---
+
+<BaseLayout title="Projects | Portfolio">
+  <section class="projects-section">
+    <header class="section-header">
+      <h1>Selected Work</h1>
+      <p>A responsive grid layout featuring recent projects and photos.</p>
+    </header>
+
+    <div class="projects-grid">
+      {projectsList.map((project) => (
+        <ProjectCard
+          title={project.title}
+          category={project.category}
+          imageUrl={project.imageUrl}
+          link={project.link}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

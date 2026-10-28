@@ -1,7 +1,14 @@
 {
   "name": "website-sergio",
-  "compatibility_date": "2026-10-27",
+  "compatibility_date": "2024-09-23",
+  "account_id": "df8667dba01f4add638ecb62ff7c1821",
   "assets": {
     "directory": "./dist"
-  }
+  },
+  "r2_buckets": [
+    {
+      "binding": "R2",
+      "bucket_name": "website-portfolio-assets"
+    }
+  ]
 }

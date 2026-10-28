@@ -1,0 +1,30 @@
+---
+import { env } from 'cloudflare:workers';
+import Layout from '../../layouts/Layout.astro';
+import { getProjectBySlug } from '../../utils/r2';
+
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect('/404');
+}
+
+const project = await getProjectBySlug(env.R2, slug);
+
+if (!project) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={`${project.title} | Architect Studio`}>
+  <main>
+    <div class="project-header">
+      <h1>{project.title}</h1>
+    </div>
+    <div class="project-gallery">
+      {project.images.map((image, index) => (
+        <img src={image} alt={`${project.title} - ${index + 1}`} loading="lazy" />
+      ))}
+    </div>
+  </main>
+</Layout>
